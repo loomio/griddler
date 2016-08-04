@@ -16,7 +16,7 @@ module Griddler
   end
 
   class Configuration
-    attr_accessor :processor_method, :reply_delimiter
+    attr_accessor :processor_method, :reply_delimiter, :custom_regex_split_points
 
     def processor_class
       @processor_class ||=
@@ -42,6 +42,10 @@ module Griddler
 
     def reply_delimiter
       @reply_delimiter ||= '-- REPLY ABOVE THIS LINE --'
+    end
+
+    def custom_regex_split_points
+      @custom_regex_split_points ||= []
     end
 
     def email_service

@@ -85,7 +85,7 @@ module Griddler::EmailParser
       /On.*wrote:/,
       /\*?From:.*$/i,
       /^[[:space:]]*\d{4}[-\/]\d{1,2}[-\/]\d{1,2}[[:space:]].*[[:space:]]<.*>?$/i
-    ]
+    ] + Array(Griddler.configuration.custom_regex_split_points)
   end
 
   def self.remove_reply_portion(body)
